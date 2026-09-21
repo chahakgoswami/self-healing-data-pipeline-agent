@@ -1,0 +1,60 @@
+{
+  "orders": {
+    "columns": {
+      "order_id": {
+        "type": "str",
+        "nullable": false,
+        "constraints": {}
+      },
+      "customer_id": {
+        "type": "int",
+        "nullable": false,
+        "constraints": {}
+      },
+      "amount": {
+        "type": "float",
+        "nullable": false,
+        "constraints": {"min": 0}
+      },
+      "currency": {
+        "type": "str",
+        "nullable": false,
+        "constraints": {"allowed_values": ["USD", "EUR", "GBP"]}
+      },
+      "status": {
+        "type": "str",
+        "nullable": false,
+        "constraints": {"allowed_values": ["pending", "shipped", "delivered", "cancelled"]}
+      }
+    }
+  },
+  "users": {
+    "columns": {
+      "user_id": {
+        "type": "int",
+        "nullable": false,
+        "constraints": {}
+      },
+      "username": {
+        "type": "str",
+        "nullable": false,
+        "constraints": {"max_length": 64}
+      },
+      "email": {
+        "type": "str",
+        "nullable": false,
+        "constraints": {}
+      },
+      "age": {
+        "type": "int",
+        "nullable": false,
+        "constraints": {"min": 0, "max": 150}
+      },
+      "active": {
+        "type": "bool",
+        "nullable": false,
+        "constraints": {}
+      }
+    }
+  }
+}
